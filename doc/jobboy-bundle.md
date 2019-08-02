@@ -43,7 +43,9 @@ bundle.
 
 ### ProcessRepository on Redis
 
-If you want to store the processes on Redis add the Redis ProcessRepository implementation to your composer.json
+If you want to store the processes on Redis add the
+[Redis ProcessRepository](https://github.com/danielsan80/jobboy-processes-redis)
+implementation to your composer.json
 (*recommended*)
 
 ```
@@ -69,7 +71,9 @@ job_boy:
 
 ### ProcessRepository on Doctrine
 
-If you want to store the processes on Doctrine (mysql or mariadb) add the Doctrine ProcessRepository implementation to your composer.json
+If you want to store the processes on Doctrine (mysql or mariadb) add the
+[Doctrine ProcessRepository](https://github.com/danielsan80/jobboy-processes-doctrine)
+implementation to your composer.json
 
 ```
 composer require dansan/jobboy-processes-doctrine
