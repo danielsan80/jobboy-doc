@@ -4,7 +4,7 @@ This is part of the JobBoy project [documentation](../README.md)
 
 This is the [JobBoy Example](https://github.com/danielsan80/jobboy-example) documentation.
 
-This is an example Symfony application using JobBoyBundle (and JobBoy).
+This is a Symfony example application using JobBoyBundle (and JobBoy).
 
 
 ## Getting started

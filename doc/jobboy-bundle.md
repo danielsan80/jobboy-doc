@@ -4,7 +4,7 @@ This is part of the JobBoy project [documentation](../README.md)
 
 This is the [JobBoyBundle](https://github.com/danielsan80/jobboy-bundle) documentation.
 
-JobBoyBundle is the Symfony Bundle to integrate and configurate JobBoy in your Symfony app.
+JobBoyBundle is the Symfony Bundle to integrate and configure JobBoy in your Symfony app.
 
 ## Getting started
 
