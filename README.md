@@ -20,5 +20,9 @@ A Symfony4 example application using JobBoy
 
 
 
+## Getting started
+
+See how to install the [jobboy-bundle](./doc/jobboy-bundle.md) in your Symfony app. 
+
 
 
