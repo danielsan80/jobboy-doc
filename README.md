@@ -15,6 +15,8 @@ The Doctrine ProcessRepository implementation
 The Redis ProcessRepository implementation
 - [jobboy-example](./doc/jobboy-example.md):
 A Symfony4 example application using JobBoy
+- [jobboy-test-pack](./doc/jobboy-test-pack.md):
+Just a set of test dependencies to share in the JobBoy repositories
 - [jobboy-doc](./README.md): This documentation
 
 
