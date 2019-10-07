@@ -84,7 +84,7 @@ diventa
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Tests\\": "tests/"
         }
     },
     
