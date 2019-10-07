@@ -8,10 +8,6 @@ del progetto.
 
 # About Symfony
 
-Per facilitare l'installazione di Symfony ho aggiunto al Dockerfile l'installazione del symfony-cli e di wget.
-Poi ho lanciato `symfony new my_project --no-git` per poi spostare il contenuto della directory my_project nella root
-del progetto.
-
 Symfony così com'è non mi va bene così faccio in genere le seguenti modifiche:
 
 1- Sposto il contenuto di `services.yaml` in `services_default.yaml`
