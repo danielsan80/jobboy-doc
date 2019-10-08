@@ -141,4 +141,4 @@ I ProcessHandler devono essere registrati nel DIC di Symfony come servizi con il
 
 
 ## Resources
-- [Notes](./doc/notes.md)
+- [Notes](./jobboy-example/notes.md)
