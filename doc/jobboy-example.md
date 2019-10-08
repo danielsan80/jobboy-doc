@@ -48,12 +48,12 @@ Obviously the `jobboy:work` command should be added to Cron or Supervisord. An e
 
 You can execute the process in a command too waiting the end of the process (just for debug purpose):
 ```
-sf jobboy:process:execute --code create_data_file --parameters=data/create_data_file/parameters.json 
+sf jobboy:process:execute --code=create_data_file --parameters=data/create_data_file/parameters.json 
 ```
 
 You can remove old processes:
 ```
-sf jobboy:process:clear --days 90 
+sf jobboy:process:clear --days=90 
 ``` 
 
 You can list all the processes...
@@ -84,8 +84,7 @@ That's all.
 
 Questo progetto è un esempio di utilizzo di [JobBoy](https://github.com/danielsan80/jobboy).
 
-Si tratta di un applicativo Symfony 4 con alcuni [piccoli adattamenti](./jobboy-example/notes.md)
-(non rilevanti per utilizzare JobBoy).
+Si tratta di un applicativo Symfony 4 (vedi le [note](./jobboy-example/notes.md)).
 
 In questa applicazione è stato aggiunto il JobBoyBundle ed è stato implementato un job di esempio `create_data_file`.
 
@@ -95,10 +94,10 @@ Il `create_data_file` crea un file .jsonl contenente n anagrafiche generate con
 Per farlo impiega diverse iterazioni sospendendo il lavoro e salvando lo stato di avanzamento nel Process di JobBoy.
 
 Per definire un job in JobBoy è necessario sviluppare un set di ProcessHandler, che implementino l'interfaccia
-`ProcessHandlerInterface` e che gestiscano in maniera esclusiva le varie casistiche nelle quali il job si può
+`ProcessHandlerInterface` e che gestiscano le varie casistiche nelle quali il job si può
 trovare.
 
-E' possibile tralasciare alcune casistiche e delegarne la gestione a dei ProcessHandler generici
+E' possibile tralasciare alcune casistiche e delegarne la gestione a dei ProcessHandler generici 
 (con indice di priorità maggiore di 100). 
 
 > La priority può trarre in inganno: il valore di default è 100, se si vuole registrare un ProcessHandler con
@@ -126,7 +125,12 @@ richiesta nei parametri del `Process`. Porta il `Process` dallo stato `ending` a
 stato `failing` eventuali `Process` rimasti `handled` il che può verificarsi se viene interrotto il worker
 durante un'iterazione.
 - **Fail**: Quando il `Process` è in `failing` questo `ProcessHandler` fa il tear down del lavoro, cancellando il file
-temporaneo, dopo di ché lo porterà in `failed`.   
+temporaneo, dopo di ché lo porterà in `failed`.
+
+- **Dummy**: E' generico e registrato quindi con una priorità più bassa (120). Il suo scopo è quello di coprire le
+casistiche rimaste scoperte portando progressivamente il Process nello stato di `completed` o `failed`. Serve
+a "chiudere i buchi" durante lo sviluppo di un nuovo job ma anche ad impedire temporaneamente che un job scritto
+male blocchi la coda lasciando indefinitamente il Process in uno stato attivo.
 
 
 I ProcessHandler devono essere registrati nel DIC di Symfony come servizi con il tag `jobboy.process_handler`.
