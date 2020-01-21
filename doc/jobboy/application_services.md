@@ -2,7 +2,7 @@
 
 Il JobBoy contiene alcuni pochi Application Service per utilizzarlo.
 
-L'utilizzo standard di JobBoy è descritto dai seguenti servizi:
+L'utilizzo standard di JobBoy è descritto da alcuni servizio principali:
 
 - **StartProcess** permette di creare un `Process`
 - **Work** permette di eseguire un ciclo di iterazioni sui processi per un certo periodo di tempo (`timeout`) e
@@ -15,11 +15,6 @@ Alternativamente si può eseguire in maniera apparentemente sincrona il servizio
 attenderà fino a che il processo creato non verrà completato, altrimenti lo itererà lui stesso usando l`IterationMaker`
 fino al completamento.
 
-Nell'ipotesi di voler utilizzare Alek6:
-
-- **IterateOneProcess** esegue una sola iterazione usando l'`IterationMaker`. Si può quindi creare un `WorkerTask`
-per Alek6 che utilizza questo servizio anziché usare il `Work` in un console command.
-
 
 Alcune utilities:
 
@@ -27,3 +22,16 @@ Alcune utilities:
 non sono un dato importante e passato un certo periodo di tempo possono essere cancellati.
 
 - **ListProcesses** restituisce i processi presenti sotto forma di un DTO.
+
+- **PauseWork** segnala al servizio **Work** la necessità di fermare il ciclo di iterazioni sui processi.
+**Work** quindi si metterà in idle appena finita l'iterazione corrente e vi rimarrà fino a che non verrà
+eseguito **UnpauseWork**
+
+- **UnpauseWork** segnala al servizio **Work** che può riiniziare il ciclo di iterazioni sui processi.
+
+
+Nell'ipotesi di voler utilizzare Alek6 (non ancora pubblicato):
+
+- **IterateOneProcess** esegue una sola iterazione usando l'`IterationMaker`. Si può quindi creare un `WorkerTask`
+per Alek6 che utilizza questo servizio anziché usare il `Work` in un console command.
+
