@@ -17,7 +17,7 @@ utilizzate per ragioni di semplicità a scapito di una presunta minore efficienz
 Così è nata l'idea di realizzare un JobMan più piccolo, portandoci un po' del codice
 di JobMan e l'esperienza accumulata nel realizzarlo.
 
-Forse un giorno JobBoy crescerà e diventerò un nuovo JobMan.
+Forse un giorno JobBoy crescerà e diventerà un nuovo JobMan.
 
 ## Example ##
 A Symfony4 example application using JobBoy is available [here](./jobboy-example.md) 
@@ -66,6 +66,7 @@ sudo apt-get install graphviz
 - [IterationMaker](./jobboy/iteration_maker.md)
 - [ProcessIterator](./jobboy/process_iterator.md)
 - [ProcessHandlers](./jobboy/process_handlers.md)
+- [Il PauseControl](./jobboy/pause_control.md)
 - [Gli Application services](./jobboy/application_services.md)
 - [L'EventBus](./jobboy/event_bus.md)
 - [I Console Command](./jobboy/console_commands.md)

@@ -44,7 +44,18 @@ Obviously the `jobboy:work` command should be added to Cron or Supervisord. An e
 ... 
 
 * * * * * /usr/bin/php /var/www/project/bin/console jobboy:work --timeout=300 --idle-time=30 --env=prod
-```  
+```
+
+You can pause the worker so it stops iterating on processes going in a kind of idle time:
+```
+sf jobboy:work:pause 
+```
+
+And you can unpause it so it restarts iteriting:
+```
+sf jobboy:work:unpause 
+```
+   
 
 You can execute the process in a command too waiting the end of the process (just for debug purpose):
 ```
