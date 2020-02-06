@@ -35,3 +35,7 @@ Nell'ipotesi di voler utilizzare Alek6 (non ancora pubblicato):
 - **IterateOneProcess** esegue una sola iterazione usando l'`IterationMaker`. Si può quindi creare un `WorkerTask`
 per Alek6 che utilizza questo servizio anziché usare il `Work` in un console command.
 
+
+Altri servizi:
+
+E' possibile che ci siano nuovi servizi non ancora documentati.

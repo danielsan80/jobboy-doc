@@ -55,7 +55,11 @@ And you can unpause it so it restarts iteriting:
 ```
 sf jobboy:work:unpause 
 ```
-   
+
+Add --wait if you need a synchronous behaviour for pause or unpause: 
+```
+sf jobboy:work:pause --wait
+```
 
 You can execute the process in a command too waiting the end of the process (just for debug purpose):
 ```
@@ -86,6 +90,21 @@ sf jobboy:process:list --show b793c
 ```
 sf jobboy:process:list --show-first
 ```
+
+
+You can kill a process with:
+```
+sf jobboy:process:kill --id b793c
+```
+
+You can kill the current process with:
+
+```
+sf jobboy:process:kill --current
+``` 
+
+
+
 
 
 That's all.

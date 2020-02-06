@@ -67,6 +67,7 @@ sudo apt-get install graphviz
 - [ProcessIterator](./jobboy/process_iterator.md)
 - [ProcessHandlers](./jobboy/process_handlers.md)
 - [Il PauseControl](./jobboy/pause_control.md)
+- [La KillList](./jobboy/kill_list.md)
 - [Gli Application services](./jobboy/application_services.md)
 - [L'EventBus](./jobboy/event_bus.md)
 - [I Console Command](./jobboy/console_commands.md)
