@@ -27,4 +27,11 @@ Just a set of test dependencies to share in the JobBoy repositories
 See how to install the [jobboy-bundle](./doc/jobboy-bundle.md) in your Symfony app. 
 
 
+## Supporter
+
+Thanks to [IdroLAB](https://www.idrolab.net) for supporting the project.
+
+## License
+Licensed under the [MIT license](LICENCE).
+
 
