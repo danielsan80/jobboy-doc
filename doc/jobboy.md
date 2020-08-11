@@ -73,6 +73,8 @@ sudo apt-get install graphviz
 - [I Console Command](./jobboy/console_commands.md)
 - [Il Bundle](./jobboy/bundle.md)
 - [JobBoy e JobMan](./jobboy/jobman.md)
+- [StepManager](./jobboy/step_manager.md)
+- [FlowManager](./jobboy/flow_manager.md)
 
 
 ## Credits
