@@ -13,7 +13,7 @@ The JobBoy project includes:
 The Doctrine ProcessRepository implementation 
 - [jobboy-processes-redis](./doc/jobboy-bundle.md#processrepository-on-redis):
 The Redis ProcessRepository implementation
-- [jobboy-api](./doc/jobboy-api.md):
+- [jobboy-api](./doc/jobboy-bundle.md#jobboy-api):
 The controllers to integrate the JobBoy Api routes in a Symfony app using jobboy
 - [jobboy-example](./doc/jobboy-example.md):
 A Symfony4 example application using JobBoy
