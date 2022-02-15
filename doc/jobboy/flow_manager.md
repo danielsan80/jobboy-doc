@@ -71,7 +71,6 @@ anche i seguenti tag:
       - name: jobboy.flow.node_change
         to: a
         on: retry  
-  
 
   ...
 ```

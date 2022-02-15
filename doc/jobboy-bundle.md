@@ -107,3 +107,70 @@ Then create a migration (your first one) to create the `__process` table.
 For example you could add [this one](./jobboy-bundle/php/Version00000000000000.php) to your `src/Migrations` folder.
 
 This is the approach used in Broadway for the DbalEventStore.
+
+
+
+### JobBoy Api
+
+Optionally you can enable the jobboy api.
+To do this you must add the [jobboy api module](https://github.com/danielsan80/jobboy-api)
+to your composer.json
+
+```
+composer require dansan/jobboy-api
+```
+
+Your users need the default `ROLE_JOBBOY` role to be allowed to access to the api endpoints.
+
+If you need to change this role for any reason (in `ROLE_ADMIN` for example)
+you can add this to the configuration:
+
+```yaml
+# config/packages/job_boy.yaml
+
+job_boy:
+  api:
+    required_role: ROLE_ADMIN
+```
+
+Obviously you can also do it through role inheritance in the `security.yml`
+
+```yaml
+# config/packages/security.yaml
+
+security:
+  role_hierarchy:
+    ROLE_ADMIN: [ROLE_JOBBOY]
+```
+
+You can't do it through role inheritance if you want open the endpoints access to everyone,
+so you need to change the configuration:
+
+```yaml
+# config/packages/job_boy.yaml
+
+job_boy:
+  api:
+    required_role: IS_AUTHENTICATED_ANONYMOUSLY
+```
+
+To enable the jobboy api routes you need to add this entry to your routing:
+
+```yaml
+#config/routes/jobboy.yaml
+
+jobboy:
+  resource: .
+  type: jobboy
+  prefix: /jobboy/api
+```
+Obviously you can change the prefix as you prefer.
+
+You can try to install [jobboy-example](https://github.com/danielsan80/jobboy-api) and execute
+
+```
+curl -X GET -H "Authorization: Basic YWRtaW46cDRzc3dvcmQ=" "http://jobboy-example/jobboy/api/v1/processes"
+```
+
+where `YWRtaW46cDRzc3dvcmQ` is the base64 encoding of `admin:p4ssword`
+and `jobboy-example` is the localhost where you mounted che project.
