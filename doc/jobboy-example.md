@@ -165,6 +165,22 @@ male blocchi la coda lasciando indefinitamente il Process in uno stato attivo.
 
 I ProcessHandler devono essere registrati nel DIC di Symfony come servizi con il tag `jobboy.process_handler`.
 
+
+## API
+
+In questo progetto è abilitata anche l'api per poter interagire con JobBoy via http.
+
+Si può ad esempio modificare i propri host così...
+
+```
+# /etc/hosts
+
+127.0.0.10 jobboy-example
+```
+
+...e da browser andare su `http://jobboy-example`.
+
+
 ## TO DO
 - Aggiungere un esempio di utilizzo dello StepManager
 - Aggiungere un esempio del ProcessHandler Dummy
