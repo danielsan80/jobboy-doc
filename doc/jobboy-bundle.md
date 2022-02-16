@@ -173,4 +173,4 @@ curl -X GET -H "Authorization: Basic YWRtaW46cDRzc3dvcmQ=" "http://jobboy-exampl
 ```
 
 where `YWRtaW46cDRzc3dvcmQ` is the base64 encoding of `admin:p4ssword`
-and `jobboy-example` is the localhost where you mounted che project.
+and `jobboy-example` is the localhost where you mounted the project.
