@@ -9,10 +9,10 @@ The JobBoy project includes:
 
 - [jobboy](./doc/jobboy.md): The domain core library
 - [jobboy-bundle](./doc/jobboy-bundle.md): The Symfony bundle 
-- [jobboy-processes-doctrine](./doc/jobboy-bundle.md#processrepository-on-doctrine):
-The Doctrine ProcessRepository implementation 
-- [jobboy-processes-redis](./doc/jobboy-bundle.md#processrepository-on-redis):
-The Redis ProcessRepository implementation
+- [jobboy-driver-doctrine](./doc/jobboy-bundle.md#processrepository-on-doctrine):
+The Doctrine driver with the ProcessRepository implementation
+- [jobboy-driver-redis](./doc/jobboy-bundle.md#processrepository-on-redis):
+The Redis driver with the ProcessRepository implementation
 - [jobboy-api](./doc/jobboy-bundle.md#jobboy-api):
 The controllers to integrate the JobBoy Api routes in a Symfony app using jobboy
 - [jobboy-example](./doc/jobboy-example.md):
