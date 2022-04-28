@@ -24,4 +24,4 @@ Ovviamente sarà necessario intervenire su questi aspetti per razionalizzare l'i
 ma per ora vanno bene così.
 
 I ProcessRepository Doctrine e Redis sono disponibili in package separati,
-rispettivamente `dansan/jobboy-processes-doctrine` e `dansan/jobboy-processes-redis`.
+rispettivamente `dansan/jobboy-driver-doctrine` e `dansan/jobboy-driver-redis`.

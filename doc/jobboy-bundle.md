@@ -17,8 +17,9 @@ composer require dansan/jobboy-bundle
 Register the JobBoyBundle in your Syfmony app.
 
 ```php
-<?php
 # config/bundles.php
+
+<?php
 
 return [
     ...
@@ -36,20 +37,19 @@ job_boy:
   process_class: JobBoy\Process\Domain\Entity\Process
 ```
 
-The InMemory ProcessRepository is only for test purposes so it is a bad idea to not configure the
+The InMemory ProcessRepository is only for test purposes, so it is a bad idea to not configure the
 bundle.
-
 
 
 ### ProcessRepository on Redis
 
 If you want to store the processes on Redis add the
-[Redis ProcessRepository](https://github.com/danielsan80/jobboy-processes-redis)
-implementation to your composer.json
+[Redis Driver](https://github.com/danielsan80/jobboy-driver-redis)
+to your composer.json
 (*recommended*)
 
 ```
-composer require dansan/jobboy-processes-redis
+composer require dansan/jobboy-driver-redis
 ```
 
 The configuration is:
@@ -62,21 +62,21 @@ parameters:
   env(JOBBOY_REDIS_PORT): ''
 
 job_boy:
-  process_repository: redis
-
-  redis:
+  process_repository:
+    name: redis
     host: '%env(resolve:JOBBOY_REDIS_HOST)%'
     port: '%env(resolve:JOBBOY_REDIS_PORT)%'
+
 ```
 
 ### ProcessRepository on Doctrine
 
 If you want to store the processes on Doctrine (mysql or mariadb) add the
-[Doctrine ProcessRepository](https://github.com/danielsan80/jobboy-processes-doctrine)
-implementation to your composer.json
+[Doctrine Driver](https://github.com/danielsan80/jobboy-driver-doctrine)
+to your composer.json
 
 ```
-composer require dansan/jobboy-processes-doctrine
+composer require dansan/jobboy-driver-doctrine
 ```
 
 The configuration is:
